@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scheduale parser</title>
+</head>
+<style>
+#drop{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:25px;
+	text-align:center;
+	font:20pt bold,"Vollkorn";color:#bbb
+}
+
+a { text-decoration: none }
+</style>
+<body>
+    <pre>
+        Output Format: 
+        <select name="format" onchange="setfmt()">
+            <option value="html"selected> HTML</option>
+            <option value="json"> JSON</option>
+        </select>
+        <p><input type="file" name="xlfile" id="xlf" /> Select file here</p>
+        <div id="drop">or drop a spreadsheet file here to see sheet data</div>
+
+        <b>Advanced Demo Options:</b>
+        Use Web Workers: (when available) <input type="checkbox" name="useworker" checked>
+        Use Transferrables: (when available) <input type="checkbox" name="xferable" checked>
+        Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked>
+    </pre>
+    <pre id="out"></pre>
+    <div id="htmlout"></div<br />
+<!-- uncomment the next line here and in xlsxworker.js for encoding support -->
+<script src="dist/cpexcel.js"></script>
+<!--<script src="shim.js"></script>
+<script src="jszip.js"></script>
+<script src="xlsx.js"></script>-->
+<script src="dist/xlsx.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/ru.js"></script>
+<script src="dist/utils/stringParser.js"></script>
+<script src="dist/utils/sheetParser.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
